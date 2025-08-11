@@ -17,8 +17,10 @@ def size():
 
 def empty():
     """Check if the stack is empty."""
-    return len(stack) == 0 
-
+    if len(stack) == 0:
+        return 1
+    else:
+        return 0
 def top():
         """Return the top item of the stack without removing it. If empty, return -1."""
         if not stack:
@@ -29,7 +31,7 @@ n = int(sys.stdin.readline())
 for _ in range(n):
     cmd = sys.stdin.readline().strip().split()
     if cmd[0] == "push":
-        print(push(int(cmd[1])))
+        push(int(cmd[1]))
     elif cmd[0] == "pop":
         print(pop())
     elif cmd[0] == "size":
