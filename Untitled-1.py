@@ -8,7 +8,7 @@ def push (item):
 def pop ():
     """Pop an item off the stack."""
     if not stack:
-        raise IndexError("pop from empty stack")
+        return -1
     return stack.pop()
 
 def size():
