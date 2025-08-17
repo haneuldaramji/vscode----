@@ -1,0 +1,43 @@
+import sys
+def push (item):
+    """Push an item onto the stack."""
+    stack.append(item)
+
+def pop ():
+    """Pop an item off the stack."""
+    if not stack:
+        return -1
+    return stack.pop()
+ 
+def empty():
+    """Check if the stack is empty."""
+    if len(stack) == 0:
+        return 1
+    else:
+        return 0
+
+
+n = int(sys.stdin.readline())
+for i in range(n):
+    cmd = sys.stdin.readline().strip()
+    stack = []
+    if cmd[-1] == ")":
+        is_vps= True
+        for j in range (len(cmd)):
+            if cmd[j] == "(":
+                push(cmd[j])
+            elif cmd[j] ==")":
+                if pop() == -1:
+                    is_vps = False
+                    break  
+               
+        if is_vps and empty() == 1:
+            print("YES")
+            
+        else:
+            print("NO")    
+    else:
+        print("NO")
+       
+    
+    
