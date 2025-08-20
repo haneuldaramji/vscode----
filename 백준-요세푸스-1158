@@ -1,0 +1,17 @@
+import sys
+n,k = map(int, sys.stdin.readline().split())
+queue = []
+
+for  i in range(n):
+    queue.append(int(i+1))
+
+
+empty = False
+count = 0
+idx = 0
+while empty == False:
+        if count == k:
+            print(queue.pop(idx), end=' ')
+            count = 0
+        else:
+            
